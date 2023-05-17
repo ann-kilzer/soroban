@@ -2,22 +2,30 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    "plugin:react/recommended",
+    'plugin:react-hooks/recommended'
   ],
+  ignorePatterns: ["/**/*.html"],
   overrides: [
   ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: [
-    'react',
-  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  plugins: ['@typescript-eslint', 'react'],
   rules: {
     semi: 'off',
-    'react/react-in-jsx-scope': 'off',
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/react-in-jsx-scope": "off"
   },
+  root: true,
+  settings: {
+    react: {
+      pragma: "React",
+      version: "detect"
+    }
+  }
 };

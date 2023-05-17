@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { render, fireEvent, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 import HomeCard from '../HomeCard'
